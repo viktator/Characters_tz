@@ -1,0 +1,35 @@
+.inform {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+}
+
+.characteristic {
+    border-collapse: collapse;
+    color: #2d45a3;
+    font-weight: 400;
+}
+
+.characteristic, th, td {
+    border: 1px solid black;
+}
+.characteristic  td {
+    padding: 5px 10px;
+}
+.fade-enter {
+    opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+    opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
