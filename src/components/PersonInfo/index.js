@@ -1,5 +1,7 @@
 import React from 'react'
 import './style.css'
+import PropTypes from 'prop-types';
+
 
 function PersonInfo({height, hair_color, mass, eye_color}) {
     return (
@@ -28,6 +30,12 @@ function PersonInfo({height, hair_color, mass, eye_color}) {
 
         </div>
     )
+}
+PersonInfo.propTypes = {
+    name: PropTypes.string,
+    hair_color: PropTypes.string,
+    mass: PropTypes.string,
+    eye_color: PropTypes.string
 }
 
 export default PersonInfo

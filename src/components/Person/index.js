@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PersonInfo from '../PersonInfo'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import PropTypes from 'prop-types';
 import './style.css'
 
 function Person({ name, handleOpen, hair_color, mass, eye_color, height, isOpened }){
@@ -28,6 +29,15 @@ function Person({ name, handleOpen, hair_color, mass, eye_color, height, isOpene
         </div>
     )
 
+}
+Person.propTypes = {
+    name: PropTypes.string,
+    hair_color: PropTypes.string,
+    mass: PropTypes.string,
+    eye_color: PropTypes.string,
+    height: PropTypes.string,
+    handleOpen:PropTypes.func,
+    isOpened:PropTypes.bool
 }
 
 export default Person
