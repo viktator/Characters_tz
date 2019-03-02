@@ -36,6 +36,6 @@ PersonInfo.propTypes = {
     hair_color: PropTypes.string,
     mass: PropTypes.string,
     eye_color: PropTypes.string
-}
+};
 
 export default PersonInfo

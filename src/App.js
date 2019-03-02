@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import Person from './components/Person'
-
+import PersonList from './components/PersonList'
+import PersonInfo from './components/PersonInfo'
 
 class App extends Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class App extends Component {
 
         this.state = {
             characters: [],
-            isOpen: null
+            activePeronName: null
         };
     }
 
@@ -32,16 +32,16 @@ class App extends Component {
             })
     }
 
-    handleOpen = name => this.setState({isOpen: name === this.state.isOpen ? null : name})
+    handleOpen = name =>this.setState({activePeronName: this.state.activePeronName === name ? null : name })
 
     render() {
         const {characters} = this.state;
+        const activePerson = this.state.characters.find(({ name }) => name === this.state.activePeronName )
         return (
             <div className="App">
                 <div className={'right-col'}>
-                    {this.state.characters.map((person) => <Person handleOpen={this.handleOpen}
-                                                                   isOpened={person.name === this.state.isOpen}
-                                                                   key={person.name} {...person} />)}
+                    <PersonList handleOpen={this.handleOpen} activePerson={this.state.activePeronName} characters={characters} />
+                    {this.state.activePeronName && <PersonInfo {...activePerson} />}
                 </div>
             </div>
         );

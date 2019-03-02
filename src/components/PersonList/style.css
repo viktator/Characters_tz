@@ -1,0 +1,6 @@
+.list li{
+    list-style: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+}
